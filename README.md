@@ -29,17 +29,8 @@ library("tidyverse")
 airbnb <- read.csv("airbnb-vancouver-bc-listings.csv.bz2")
 airbnb1<-airbnb %>%
   select(price, bedrooms,room_type, accommodates)
-head(colSums(is.na(airbnb)))
+airbnb1<-colSums(is.na(airbnb))
 ```
-
-
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>id</dt><dd>0</dd><dt>listing_url</dt><dd>0</dd><dt>scrape_id</dt><dd>0</dd><dt>last_scraped</dt><dd>0</dd><dt>name</dt><dd>0</dd><dt>description</dt><dd>0</dd></dl>
-
 
 
 convert the price into numeric and replace the NAs in bedrooms with 0 bedrooms.
